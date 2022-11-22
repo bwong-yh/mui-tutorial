@@ -7,32 +7,20 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 
-import NavbarItems from './NavbarItems';
-
-const drawerWidth = 240;
+import navbarItems from './_navbarItems';
+import navbarStyles from './_navbarStyles';
 
 const Navbar = () => {
   return (
-    <Drawer
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-        },
-      }}
-      variant='permanent'
-      anchor='left'
-    >
+    <Drawer sx={navbarStyles.drawer} variant='permanent' anchor='left'>
       <Toolbar />
       <Divider />
       <List>
-        {NavbarItems.map(item => (
+        {navbarItems.map(item => (
           <ListItem key={item.id} disablePadding>
             <ListItemButton>
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.label} />
+              <ListItemIcon sx={navbarStyles.icons}>{item.icon}</ListItemIcon>
+              <ListItemText sx={navbarStyles.text} primary={item.label} />
             </ListItemButton>
           </ListItem>
         ))}

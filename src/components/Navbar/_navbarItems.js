@@ -5,7 +5,7 @@ import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
 import DnsIcon from '@mui/icons-material/Dns';
 
-const NavbarItems = [
+const navbarItems = [
   {
     id: 0,
     icon: <PeopleIcon />,
@@ -44,4 +44,4 @@ const NavbarItems = [
   },
 ];
 
-export default NavbarItems;
+export default navbarItems;
