@@ -9,6 +9,7 @@ import ListItemText from '@mui/material/ListItemText';
 
 import navbarItems from './_navbarItems';
 import navbarStyles from './_navbarStyles';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -18,7 +19,7 @@ const Navbar = () => {
       <List>
         {navbarItems.map(item => (
           <ListItem key={item.id} disablePadding>
-            <ListItemButton>
+            <ListItemButton component={NavLink} to={item.route}>
               <ListItemIcon sx={navbarStyles.icons}>{item.icon}</ListItemIcon>
               <ListItemText sx={navbarStyles.text} primary={item.label} />
             </ListItemButton>

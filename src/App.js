@@ -1,13 +1,18 @@
-import './App.css';
+import { Outlet } from 'react-router-dom';
+
+// mui
+import { Grid } from '@mui/material';
 
 // components
 import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
-    <div className='App'>
+    <Grid container>
       <Navbar />
-    </div>
+
+      <Outlet />
+    </Grid>
   );
 }
 
