@@ -1,14 +1,11 @@
-// mui
 import { Grid } from '@mui/material';
-
-// components
-import NotificationBell from '../components/Notifications/NotificationBell';
+import Header from '../components/Header/Header';
 
 const Authentication = () => {
   return (
     <Grid>
       <h1>Authentication</h1>
-      <NotificationBell badgeContent={2} />
+      <Header />
     </Grid>
   );
 };

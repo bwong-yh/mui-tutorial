@@ -24,8 +24,8 @@ const NotificationBell = ({ iconColor, badgeContent }) => {
     setAnchorEl(null);
   };
 
-  const notificationMessage = badgeContent
-    ? `${badgeContent} new notifications`
+  const notificationMessage = notifications.length
+    ? `${notifications.length} new notifications`
     : 'no new notifications';
 
   return (
@@ -33,9 +33,9 @@ const NotificationBell = ({ iconColor, badgeContent }) => {
       <Tooltip title={notificationMessage}>
         <IconButton
           color={iconColor}
-          onClick={badgeContent ? handleClick : null}
+          onClick={notifications.length ? handleClick : null}
         >
-          <Badge badgeContent={badgeContent} color='primary'>
+          <Badge badgeContent={notifications.length} color='primary'>
             <NotificationsIcon />
           </Badge>
         </IconButton>
