@@ -5,11 +5,22 @@ import MyButton from '../components/Button/MyButton';
 
 const Authentication = () => {
   const buttonStyles = {
-    backgroundColor: 'red',
-    fontSize: 20,
-    fontWeight: 700,
-    '&:hover': {
-      backgroundColor: 'yellow',
+    borderRadius: 2.5,
+    fontSize: '0.875rem',
+    fontWeight: 600,
+    textTransformation: 'capitalize',
+    '&.MuiButton-contained': {
+      backgroundColor: '#009be5',
+      '&:hover': {
+        backgroundColor: '#006db3',
+      },
+    },
+    '&.MuiButton-outlined': {
+      color: '#fff',
+      borderColor: '#fff',
+      '&:hover': {
+        backgroundColor: 'transparent',
+      },
     },
   };
 
@@ -17,8 +28,9 @@ const Authentication = () => {
     <Grid Item>
       <h1>Authentication</h1>
       <MyButton size='large' variant='contained' sx={buttonStyles}>
-        Text
+        All User
       </MyButton>
+      <MyButton sx={buttonStyles}>Web Setup</MyButton>
     </Grid>
   );
 };
