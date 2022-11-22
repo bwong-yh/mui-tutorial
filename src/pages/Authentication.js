@@ -8,7 +8,7 @@ const Authentication = () => {
   return (
     <Grid>
       <h1>Authentication</h1>
-      <NotificationBell badgeContent={10} />
+      <NotificationBell badgeContent={2} />
     </Grid>
   );
 };
