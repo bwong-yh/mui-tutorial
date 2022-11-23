@@ -1,4 +1,10 @@
-import { Box, Input } from '@mui/material';
+import { useForm } from 'react-hook-form';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+// mui
+import { Box, TextField } from '@mui/material';
+
 // components
 import MyModal from './MyModal';
 
@@ -15,13 +21,56 @@ const NewUserModal = ({ open, onClose }) => {
     },
   };
 
+  // form
+  const formValidationsSchema = yup.object().shape({
+    userId: yup
+      .string()
+      .required('User ID is required.')
+      .min(6, 'User ID must be at least 6 characters.'),
+    email: yup
+      .string()
+      .required('Email is required')
+      .email('Email is invalid.'),
+    phoneNumber: yup.string(),
+  });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({ resolver: yupResolver(formValidationsSchema) });
+
   const userModalContent = () => (
     <Box sx={modalStyles.inputFields}>
-      <Input placeholder='E-mail' />
-      <Input placeholder='Phone number' />
-      <Input placeholder='User id' />
+      <TextField
+        placeholder='User ID'
+        label='User ID'
+        required
+        {...register('userId')}
+        error={errors.userId ? true : false}
+        helperText={errors.userId?.message}
+      />
+      <TextField
+        placeholder='Email'
+        label='Email'
+        required
+        {...register('email')}
+        error={errors.email ? true : false}
+        helperText={errors.email?.message}
+      />
+      <TextField
+        placeholder='Phone Number'
+        label='Phone Number'
+        required
+        {...register('phoneNumber')}
+        error={errors.phoneNumber ? true : false}
+        helperText={errors.phoneNumber?.message}
+      />
     </Box>
   );
+
+  const addUser = data => {
+    console.log(data);
+  };
 
   return (
     <MyModal
@@ -30,6 +79,7 @@ const NewUserModal = ({ open, onClose }) => {
       title='New user'
       subtitle="Fill out inputs and hit 'submit' button."
       content={userModalContent()}
+      onSubmit={handleSubmit(addUser)}
     />
   );
 };
