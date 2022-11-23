@@ -1,13 +1,17 @@
+import { useState } from 'react';
+//mui
 import { Box, Grid, IconButton, Typography } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
-
 // components
 import MyButton from '../components/Button/MyButton';
 import MyCard from '../components/Card/MyCard';
 import Searchbar from '../components/Searchbar/Searchbar';
 import GridWrapper from '../GridWrapper/GridWrapper';
+import MyModal from '../components/Modal/MyModal';
 
 const Authentication = () => {
+  const [open, setOpen] = useState(false);
+
   const cardHeaderStyles = {
     wrapper: {
       display: 'flex',
@@ -26,7 +30,9 @@ const Authentication = () => {
 
   const getSearchbar = () => {
     const handleChange = value => console.log(value);
-    const addUser = () => console.log('add user');
+    const addUser = () => {
+      setOpen(true);
+    };
 
     return (
       <Box sx={cardHeaderStyles.wrapper}>
@@ -66,6 +72,7 @@ const Authentication = () => {
   return (
     <GridWrapper>
       <MyCard header={getSearchbar()} content={getContent()} />
+      <MyModal open={open} onClose={() => setOpen(false)} />
     </GridWrapper>
   );
 };

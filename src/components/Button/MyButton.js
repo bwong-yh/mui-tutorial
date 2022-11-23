@@ -1,6 +1,14 @@
 import { Button } from '@mui/material';
 
-const MyButton = ({ children, color, disabled, size, sx, variant }) => {
+const MyButton = ({
+  children,
+  color,
+  disabled,
+  size,
+  sx,
+  variant,
+  onClick,
+}) => {
   return (
     <Button
       variant={variant || 'outlined'}
@@ -8,6 +16,7 @@ const MyButton = ({ children, color, disabled, size, sx, variant }) => {
       disabled={disabled}
       size={size}
       sx={sx}
+      onClick={onClick}
     >
       {children}
     </Button>
