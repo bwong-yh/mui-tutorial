@@ -1,13 +1,13 @@
 import { useState } from 'react';
 //mui
-import { Box, Grid, IconButton, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import RefreshIcon from '@mui/icons-material/Refresh';
 // components
 import MyButton from '../components/Button/MyButton';
 import MyCard from '../components/Card/MyCard';
 import Searchbar from '../components/Searchbar/Searchbar';
 import GridWrapper from '../GridWrapper/GridWrapper';
-import MyModal from '../components/Modal/MyModal';
+import NewUserModal from '../components/Modal/NewUserModal';
 
 const Authentication = () => {
   const [open, setOpen] = useState(false);
@@ -72,7 +72,7 @@ const Authentication = () => {
   return (
     <GridWrapper>
       <MyCard header={getSearchbar()} content={getContent()} />
-      <MyModal open={open} onClose={() => setOpen(false)} />
+      <NewUserModal open={open} onClose={() => setOpen(false)} />
     </GridWrapper>
   );
 };
