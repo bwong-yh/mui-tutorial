@@ -28,7 +28,7 @@ root.render(
             <Route path='/storage' element={<Storage />} />
             <Route path='/hosting' element={<Hosting />} />
             <Route path='/functions' element={<Functions />} />
-            <Route path='/machinelearning' element={<MachineLearning />} />
+            <Route path='/machine-learning' element={<MachineLearning />} />
           </Route>
         </Routes>
       </BrowserRouter>

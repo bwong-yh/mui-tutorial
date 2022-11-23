@@ -40,7 +40,7 @@ const navbarItems = [
     id: 5,
     icon: <SettingsInputComponentIcon />,
     label: 'Machine Learning',
-    route: '/machinelearning',
+    route: '/machine-learning',
   },
 ];
 

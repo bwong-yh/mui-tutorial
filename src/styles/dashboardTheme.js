@@ -44,7 +44,6 @@ const dashboardTheme = createTheme({
       fontWeight: 600,
       color: '#fff',
       letterSpacing: '0.5px',
-      textTransform: 'capitalize',
     },
   },
 });
